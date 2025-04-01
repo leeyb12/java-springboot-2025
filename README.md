@@ -8,9 +8,11 @@
     - 브라우저(클라이언트/프론트엔드) - 사용자 **요청**을 하고, 결과를 돌려받는 파트
     - 서버(백엔드) - 사용자의 요청을 받아서 DB에서 데이터를 가져와 처리하고, 사용자에게 **응답**하는 파트 
     - 데이터베이스 - 가장 중요한 데이터가 저장되어 있는 파트
+- 웹 개념
+    - Request(요청)에 대한 서버의 Response(응답)
 
 ### SpringBoot 개요
-- Java - 컴퓨팅 세상 모든곳에서 사용될 수 있는 언어가 되고자 개발됨
+- Java - 컴퓨팅 세상 모든곳에서 사용될 수 있는 언어가 되고자 개발
 - Java 웹개발
     1. CGI(Common GateWay Interface) - HTTP 프로토콜에서 정적인 데이터만 전달할 수 있는 웹기술
     2. Servlet - CGI를 개선한 Java 웹기술. 동적웹을 개발할 수 있음
@@ -20,6 +22,7 @@
     4. JSP(Java Server Page) - 웹페이지코드(HTML)에 자바소스를 포함시켜서 개발할 수 있는 Java 웹기술
         - 확장자가 .jsp / 스파게티 코드 
     5. Spring - Java웹개발에 전성기. 웹페이지와 자바영역 분리
+        - 대한민국 전자정부 웹프레임워크 기반반
         - 설정이 복잡
     6. Spring Boot - Spring의 단점을 최소화. 설정을 간결화
 
@@ -84,11 +87,20 @@
     - Spring Initializer: Create a Maven Project
     - Specify Spring Boot Version: 3.3.10 선택
     - Specify project language: Java
-    - Input Group ID: 본인아이디 입력/ com.leeyb98 
+    - Input Group ID: com.leeyb98(각자 설정할 것) 
     - Input Artifact ID: spring01
     - Specify packaging type: Jar(Java archive, 압축파일)
     - Specify Java version: 17
     - Choose dependencies: Selected 0 dependencies 
+    - 저장위치 선택
+    - **새 창 열기** - Spring Boot 프로젝트가 루트폴더가 된 개발환경
+
+- 실행방법
+    - 코드 작성
+    - Spring Boot Dashboard > Apps > 앱 실행
+
+- 기초문법
+    - [JAVA기초문법](./JAVA_BASIC.md)
 
 
 
