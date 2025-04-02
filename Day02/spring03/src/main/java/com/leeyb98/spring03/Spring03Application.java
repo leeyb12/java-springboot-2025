@@ -17,7 +17,7 @@ public class Spring03Application {
 		// 메서드 
 		sayHi();
 
-        System.out.println("75는 짝수?" + isEven(num:75));
+        System.out.println("75는 짝수? " + isEven(num:75));
 
 		// Car클래스 인스턴스 생성
 		Car mycar = new Car();

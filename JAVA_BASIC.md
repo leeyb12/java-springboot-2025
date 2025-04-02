@@ -90,6 +90,8 @@
     - 논리연산 : &&, ||, !
     - 관계연산 : ==, >, >=, <, <=, !=
 
+    - [Java문법실습](./Day01/spring01/src/main/java/com/leeyb98/spring01/Spring01Application.java)
+
 
 #### 흐름제어
 - 조건(분기)문 : if문, switch문
@@ -137,7 +139,7 @@
         result = "로그인실패";
     }
     ``` 
-
+    - [Java문법실습](./Day01/spring02/src/main/java/com/leeyb98/spring02/Spring02Application.java)
 
 - 반복문 : for문, while문, do-while문
 
@@ -194,7 +196,7 @@
     System.out.println(변수명[1]); // 값 사용
     ```
 
-- 배열에 사용할 메서드 - Arrays 객체를 사용용
+- 배열에 사용할 메서드 - Arrays 객체를 사용
     - sort() : 배열 정렬
     - toString() : 배열 객체ID를 출력
     - asList() : 배열을 리스트로 변경(ArrayList)
@@ -229,4 +231,82 @@
 - **null**
     - 프로그래밍 상에 모든 곳에서 null이라고 사용
     - 파이썬만 None으로 사용
-    
+
+#### 객체/클래스
+- 개요
+    - 현실세계를 반영하여 프로그래밍을 하는 기법
+    - Object-Oriented Programming - OOP, 객체지향 프로그래밍
+        - C++, Java, Python, C#, GO, Rust, Kotlin ...
+    - vs. Procedure-Oriented Programming - 절차적 프로그래밍
+        - C, SQL, ...
+
+- 클래스 개요
+    - 객체를 정의하는 틀
+    - 명사(멤버변수)와 동사(멤버메서드)의 집합
+
+    ```java
+    class NewCar {
+        // 명사부분(멤버변수/속성)
+        String model_name;
+        String company;
+        String color;
+        int release_year;
+        String fuel_type;
+
+        // 동사부분(메서드)
+        public void doAccelerate() { // 가속
+        }
+        public void doBreak() { // 중지
+        }
+        public void changeGear() { // 기어변동
+        }
+        public void turnLeft() { // 좌회전
+        }
+        public void turnRight() { // 우회전
+        }
+
+        // 생성자메서드(파이썬 __init__와 유사)
+        NewCar() {
+            model_name = "없음";
+            company = "현대자동차";
+        }
+        NewCar(String model_name, String company, int release_year) {
+            this.model_name = model_name;
+            this.company = company;
+            this.release_year = release_year;
+        }
+    }
+    ```
+
+- 인스턴스(instance)
+    - 객체를 만드는 클래스를 new로 새로 생성
+    - 두개의 인스턴스하 하나를 가르칠 수 없음
+
+    ```java
+    NewCar avente = new NewCar();  // 기본생성자
+    NewCar tesla = new NewCar("X3", "Tesla", 2021);  // 인자초기화 생성자
+
+    tesla.turnRight(); // 우회전
+    // ... 
+    ```
+
+#### 상속
+- 개요
+    - 객체지향에 중요한 의미의 개념
+    - 부모클래스가 가지고 있는 속성, 메서드를 가져다 쓸 수 있는 기능
+    - 예 - 동물 -> 포유류, 양서류, 파충류 등으로 분류
+
+- 특징
+    - 부모(슈퍼)클래스에서 정의된 변수와 메서드를 물려받는다  
+    - 새로운 변수와 메서드를 추가할 수 있다
+    - 부모클래스에서 물려받은 메서드를 수정할 수 있다(오버라이딩)
+    - 동일안 부모클래스를 상속받은 하위 자식클래스들은 타입이 호환된다
+
+    ```java
+    [접근제어자] class 클래스명 extends 부모클래스명 {
+        // 부모클래스에 없는 멤버변수, 메서드 추가
+        // 부모 메서드를 오버라이딩딩
+    }
+    ```
+
+#### Getter/
