@@ -90,7 +90,7 @@
     - 논리연산 : &&, ||, !
     - 관계연산 : ==, >, >=, <, <=, !=
 
-    - [Java문법실습](./day01/spring01/src/main/java/com/hugo83/spring01/Spring01Application.java)
+    - [Java문법실습](./Day01/spring01/src/main/java/com/leeyb98/spring01/Spring01Application.java)
 
 #### 흐름제어
 - 조건(분기)문 : if문, switch문
@@ -138,7 +138,7 @@
         result = "로그인실패";
     }
     ``` 
-    - [Java문법실습](./day01/spring02/src/main/java/com/hugo83/spring02/Spring02Application.java)
+    - [Java문법실습](./Day01/spring02/src/main/java/com/leeyb98/spring02/Spring02Application.java)
 
 - 반복문 : for문, while문, do-while문
 
@@ -156,7 +156,7 @@
     }
     ```
 
-    - [Java문법실습](./day01/spring03/src/main/java/com/hugo83/spring03/Spring03Application.java)
+    - [Java문법실습](./Day01/spring03/src/main/java/com/leeyb98/spring03/Spring03Application.java)
 
     - while문 - 조건식이 참인동안 계속 반복
 
@@ -175,7 +175,7 @@
 
     ```
 
-    - [Java문법실습](./day02/spring01/src/main/java/com/hugo83/spring01/Spring01Application.java)
+    - [Java문법실습](./Day02/spring01/src/main/java/com/leeyb98/spring01/Spring01Application.java)
 
 - 반복제어 키워드 : break, continue
     - for문, while문 내에서 사용
@@ -210,7 +210,7 @@
 - Java 컬렉션 프레임워크 - 배열을 좀더 기능적으로 강화한 객체
     - **List**, Stack, Vector, ArrayList, HashSet, HashMap(파이썬 딕셔너리), HashTable
 
-- [Java문법실습](./day02/spring02/src/main/java/com/hugo83/spring02/Spring02Application.java)
+- [Java문법실습](./Day02/spring02/src/main/java/com/leeyb98/spring02/Spring02Application.java)
 
 #### 메서드
 - 함수와 동일. 객체지향언어에서는 함수를 메서드로 사용
@@ -236,7 +236,7 @@
     - 프로그래밍 상에 모든 곳에서 null이라고 사용
     - 파이썬만 None으로 사용
 
-- [Java문법실습](./day02/spring03/src/main/java/com/hugo83/spring03/Spring03Application.java)
+- [Java문법실습](./Day02/spring03/src/main/java/com/leeyb98/spring03/Spring03Application.java)
 
 #### 객체/클래스
 - 객체 개요
@@ -295,7 +295,7 @@
     tesla.turnRight(); //우회전
     // ...
     ```
-- [Java문법실습](./day02/spring04/src/main/java/com/hugo83/spring04/Spring04Application.java)
+- [Java문법실습](./Day02/spring04/src/main/java/com/leeyb98/spring04/Spring04Application.java)
 
 #### 상속
 - 개요
@@ -315,7 +315,7 @@
         // 부모 메서드를 오버라이딩
     }
     ```
-- [Java문법실습](./day02/spring05/src/main/java/com/hugo83/spring05/Spring05Application.java)
+- [Java문법실습](./Day02/spring05/src/main/java/com/leeyb98/spring05/Spring05Application.java)
 
 #### Getter/Setter
 - 내일
