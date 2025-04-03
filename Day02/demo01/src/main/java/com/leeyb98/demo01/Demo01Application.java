@@ -1,13 +1,15 @@
-package com.hugo83.demo01;
+package com.leeyb98.demo01;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootTest
-class Demo01ApplicationTests {
+@SpringBootApplication
+public class Demo01Application {
 
-	@Test
-	void contextLoads() {
+	public static void main(String[] args) {
+		SpringApplication.run(Demo01Application.class, args);
+
+		System.out.println("Hello, Spring!!");
 	}
 
 }

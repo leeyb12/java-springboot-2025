@@ -7,7 +7,7 @@ public class Animal {
     void setName(String name) {
         this.name = name;
     }
-    
+
     String getName() {
         return this.name;
     }

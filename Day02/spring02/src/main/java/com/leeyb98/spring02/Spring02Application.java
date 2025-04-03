@@ -26,22 +26,22 @@ public class Spring02Application {
 		}
 
 		// 두번째 배열
-		String[] carcompany = { "Hyundai", "Kia", "Toyota", "Benz", "BMW", "Tesla"};
-
+		String[] carcompany = { "Hyundai", "Kia", "Toyota", "Benz", "BMW", "Tesla" };
+		
 		for (String car : carcompany) {
 			System.out.println(car);
 		}
 
 		// Java 컬렉션으로 변경
-		Arrays<String> car_list = Arrays.asList(carcompany);
-		System.out.println(car_list); // 파이썬과 동일
-		System.out.println(car_list.get(index:1));
+		List<String> car_list = Arrays.asList(carcompany);
+		System.out.println(car_list); // 파이썬과 동일		
+		System.out.println(car_list.get(1));
 		
 		Arrays.sort(score);
 		for (int item : score) {
 			System.out.println(item);
 		}
-        
+
 		Arrays.sort(carcompany, Collections.reverseOrder()); // 내림차순 정렬
 		for (String car : carcompany) {
 			System.out.println(car);

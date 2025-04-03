@@ -16,8 +16,6 @@ public class Spring05Application {
 
 		Cat kitty = new Cat();
 		kitty.setName("키티");
-		kitty.cry();
-
+		kitty.cry();		
 	}
-
 }
