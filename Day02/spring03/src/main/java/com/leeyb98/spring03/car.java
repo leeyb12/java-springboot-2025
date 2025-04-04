@@ -1,6 +1,6 @@
 package com.leeyb98.spring03;
 
-public class Car {
+public class car {
 	public String name;
 	public int year;
 	private String company; // 클래스 외부에서 사용불가

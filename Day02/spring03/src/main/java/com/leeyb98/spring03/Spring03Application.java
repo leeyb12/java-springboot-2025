@@ -20,7 +20,7 @@ public class Spring03Application {
 		System.out.println("75는 짝수? " + isEven(75));
 
 		// Car클래스 인스턴스 생성
-		Car mycar = new Car(); 
+		car mycar = new car(); 
 		mycar.name = "아이오닉";
 		mycar.year = 2018;
 		// 메서드 오버로딩 사용
@@ -28,7 +28,7 @@ public class Spring03Application {
 		mycar.printCarName("흰색");
 		mycar.printCarName("테슬라", "벤츠", "베엠베", "페라리", "포르쉐"); // 가변인자 메서드 호출
 		
-		Car.printYear();  // 클래스 인스턴스 생성없이 바로 사용가능!
+		car.printYear();  // 클래스 인스턴스 생성없이 바로 사용가능!
 
 		int term = mycar.calcYear(2025);
 		System.out.println(term +"년 동안 사용");
