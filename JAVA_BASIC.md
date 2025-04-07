@@ -317,19 +317,19 @@
     ```
 - [Java문법실습](./Day02/spring05/src/main/java/com/leeyb98/spring05/Spring05Application.java)
 
-#### 접근제어자 
+#### 접근제어자
 - 클래스, 변수, 메서드 등에 외부에서 어떤방식을 접근할건지를 정의하는 키워드
 - 객체지향의 특징 중 캡슐화를 위해서 사용
-- 접근 제어자 분류 
+- 접근제어자 분류
     - public : 접근 제한이 없음. 누구나 접근 가능
     - private : 같은 클래스 내에서만 접근 가능
-    - protected : 같은 패키지 내 또는 다른 패키지의 자식 클래스에서만 접근 가능능
+    - protected : 같은 패키지 내 또는 다른 패키지의 자식 클래스에서만 접근 가능
     - default : (키워드 생략가능)같은 패키지 내에서만 접근 가능
-- 사용빈도: public > default > private > protected
+- 사용빈도 : public > default > private > protected
 
 #### Getter/Setter
 - 캡슐화를 제대로 하기위한 코딩방법
-   
+
     ```java
     ppoppy.age = -19; // 이런 현상을 막아야 함!
     ```
@@ -340,24 +340,23 @@
         - get + 멤버변수명로 메서드명 생성
     - Setter : 중요! 잘못된 값이 들어가지 않도록 막아주는 메서드
         - set + 멤버변수명(입력파라미터) 형태로 생성
-        - 내부로직으로 입력값 필터링 
+        - 내부로직으로 입력값 필터링
 
-
+- [Java문법실습](./Day02/spring05/src/main/java/com/leeyb98/spring05/Spring05Application.java)
 
 #### Object 클래스
 - 모든 클래스의 조상 클래스. extends를 사용하지 않아도 항상 상속됨
     - java.lang.Object
     - Object 클래스가 가지고 있는 멤버변수와 메서드는 다 사용가능
 
-
 #### 추상 클래스
 - 구체적인 내용이 포함되지 않은 클래스
 - 반드시 자식클래스에서 오버라이딩으로 구현
-- 추후 다시 학습요!
+- `추후 다시 학습요`!
 
 #### 인터페이스
 - 상수와 추상메서드로만 구성된 클래스의 한 형태
-- 아무런 기능이 없고 단지 어떻게 구현을 해야 한다는 규칙만 선언되어 있음
+- 아무런 기능이 없고 단시지 어떻게 구현을 해야 한다는 규칙만 선언되어 있음
 - 중대형 프로젝트 시 일관되고 정형화된 개발을 위한 표준화를 위해 사용
 
     ```java
@@ -371,9 +370,10 @@
 
     ```java
     [접근제어자] class 클래스명 implements 인터페이스명 {
-        // 추상메서드 구현 
+        // 추상메서드 구현
     }
     ```
+
     - implements로 가져오면 인터페이스 내의 추상 메서드는 반드시 구현
 
 - 스프링의 의존성 주입(Dependency Injection)의 핵심
@@ -396,14 +396,14 @@
     ```
 
 - 예외클래스 : ArithmeticException, ArrayIndexOutOfBoundsException, NullPointerException
-- 모든 예외클래스는 Exception 클래스를 상속받아서 생성
+- 모든 예외클래스는 Excption 클래스를 상속받아서 생성
 - 단순히 Exception 클래스로 예외처리 해도 무방
 
 ##### 예외던지기
-- 예외를 직접처리하지 않고 상위 클래스나 메서드에게 처리를 인가 
-    
+- 예외를 직접처리하지 않고 상위 클래스나 메서드에게 처리를 인가
+
     ```java
-    리턴값 메서드명(인자...) throws Exception {
+    리턴값 호출메서드(인자...) throws Exception {
         예외가 발생할 코드블럭;
         throw new Exception();
     }
@@ -415,6 +415,7 @@
         예외처리
     }
     ```
+
 - [Java문법실습](./Day03/spring02/src/main/java/com/leeyb98/spring02/Spring02Application.java)
 
 #### 객체지향 특징
@@ -422,14 +423,14 @@
 - 다형성, 상속, 캡슐화, 추상화
 
 #### 문자열 핸들링
-- [java.lang.string](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html)
-- String 
-    - 컴퓨터 -> 숫자, 사람 -> 문자 
-
+- [java.lang.String](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html)
+- String
+    - 컴퓨터 -> 숫자, 사람 -> 문자    
+    
 - [Java문법실습](./Day03/spring04/src/main/java/com/leeyb98/spring04/Spring04Application.java)
 
 #### 시간타입 핸들링
-- [java.time] (https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/time/package-summary.html)
+- [java.time](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/time/package-summary.html)
 - time
     - 날짜와 시간을 처리할 때 사용
 
@@ -469,7 +470,7 @@ public static void main(String[] args) {
 - 제네릭을 쓸때는 클래스타입만 허용
 
 
-#### 자료구조 
+#### 자료구조
 - 다수의 데이터를 저장, 관리하기 위한 목적으로 나온것 - 자료구조
 - 배열 : 다수의 데이터를 저장, 관리하기 위해 최초로 개발
 - 배열의 단점을 개선 : 리스트, 맵, 튜플, 딕셔너리, 그래프, 트리...
@@ -479,10 +480,10 @@ public static void main(String[] args) {
 
 #### Java 컬렉션 프레임워크
 
-<img src="./image/sb002.png" width="750">
+<img src="./image/sb0002.png" width="750">
 
 - List, Queue : 순서가 있는 데이터 집합. 데이터 중복 허용
-- Set : 순서가 없는 데이터 집합. 데이터 중복 허용X 
+- Set : 순서가 없는 데이터 집합. 데이터 중복 허용X
 - Map : 키와 값의 쌍의 데이터 집합. 순서X,키중복X,값중복O
 
 ##### Collection 인터페이스
@@ -518,11 +519,11 @@ public static void main(String[] args) {
     public String helloJava() {
         return "Hello, Java!";
     }
- 
+
     // 람다식
     (매개변수, ...) -> { 코드블럭; }
     // 예시
-    () -> "Hello, Java!";  // 한번 실행되고 끝남. 
+    () -> "Hello, Java!";  // 한번 실행되고 끝남.
     ```
 
 #### 함수형 인터페이스
@@ -530,13 +531,67 @@ public static void main(String[] args) {
 - 인터페이스 내에 하나의 추상메서드만 갖도록 제한해줌
 - @FunctionalInterface 어노테이션을 사용 권장
 
-#### 스트림 API 
-- 함수형 인터페이스로 데이터를 추상화하고 처리하는 자주 사용되는 함수를 정의해놓은 것
+#### 스트림 API
+- 함수형 인터페이스로 데이터를 추상화하고 처리하는 자주 사용되는 함수를 정의해 놓은 것
 - 특징
     - 원본 데이터를 변경안함
     - 일회성
-    - 내부 반복으로 작업처리 
+    - 내부 반복으로 작업처리
 
 - 스트림API가 쉽지는 않지만, 코딩량을 현저하게 줄일 수 있음.
 
 - [Java문법실습](./Day04/spring04/src/main/java/com/leeyb98/spring04/Spring04Application.java)
+
+
+#### StringBuilder
+- String 객체는 불변의 성질. 한번 생성되면 변경불가
+- 연산자로 수정을 하면 기존 메모리는 두고, 다시 String객체를 생성
+- 이를 해결하고자 하기 위해 만든 것 - StringBuilder
+- 리스트와 유사. 문자열 처리때문에 메모리 문제, 성능문제가 발생하면 StringBuilder, StringBuffer 사용 고려
+
+    ```java
+    StringBuilder sb = new StringBuilder();
+    sb.append("Hello");
+    sb.append("Java!");
+    // insert(), delete()
+    ```
+
+- [JAVA문법실습](./Day05/spring01/src/main/java/com/leeyb98/spring01/Spring01Application.java)
+
+#### GC(Garbage Collection)
+- C등 절차적 언어에서는 객체를 생성해서 메모릴 사용하면, 개발자가 직접 해제해줘야 함
+- 메모리 누수가 발생
+- 객체지향 언어에서는 GC 만들어서 메모리를 언어가 직접 핸들링 처리
+
+#### 파일입출력
+- 파일을 읽고 쓰는 작업
+- 파일쓰기에 `FileOutputStream`, `FileWriter`, `PrintWriter` 등의 클래스 사용
+- 입출력 예외가 발생할 수 있기때문에 클래스나 메서드에 `throws IOException`을 추가해야 함
+- 파일읽기에 `FileInputStream`, `BufferedReader` 클래스 사용
+
+- [JAVA문법실습](./Day05/spring02/src/main/java/com/leeyb98/spring02/Spring02Application.java)
+
+
+#### 어노테이션
+- 한글로 주석이지만, #, //,  /**/ 소스에 영향을 미치지 않는 주석과 다름
+- 자바 소스에 추가해서 여러가지 기능을 수행하는 메타데이터 일종
+- @로 시작, JDK 1.5 이상부터 사용가능
+- 클래스 파일에 같이 포함되어 JVM 작동시 실행됨
+- 클래스, 메서드 바로 위에 작성. 코드와 설정을 관리할 수 있게 도와주는 역할
+
+##### 1. @Override
+- 오버라이드를 올바르게 했는지 컴파일러 체크
+- 상속, 인터페이스 구현시 사용
+
+##### 2. @Deprecated
+- 앞으로 다음버전에서 삭제될 수 있음. 사용하지 말것을 권유하는 체크
+
+<img src="./image/sb0011.png" width="700">
+
+- 되도록이면 이 함수는 사용할지 말것
+
+##### 3. @FunctionalInterface
+- 함수형 인터페이스에 붙여서, 컴파일러가 올바르게 작성되었는지 체크
+
+##### 4. @SuppressWarnings
+- 컴파일러의 경고메시지가 표시되지 않음

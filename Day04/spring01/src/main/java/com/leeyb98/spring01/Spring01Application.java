@@ -2,6 +2,7 @@ package com.leeyb98.spring01;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 import org.springframework.boot.SpringApplication;
@@ -17,7 +18,7 @@ public class Spring01Application {
 		LocalDate date1 = LocalDate.now();
 		System.out.println(date1);
 
-		LocalDate date2 = LocalDate.of(2017, 07, 9);
+		LocalDate date2 = LocalDate.of(2017, 7, 9);
 		System.out.println(date2);
 
 		// Date formatting
@@ -33,6 +34,6 @@ public class Spring01Application {
 
 		// 날짜차이
 		System.out.println(LocalDate.now().plusDays(2));
-		System.out.println(LocalDate.now().minusYears(2));
+		System.out.println(LocalTime.now().minusHours(2));
 	}
 }

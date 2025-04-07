@@ -37,7 +37,7 @@ public class Spring03Application {
 		lst2.add("Five");
 		lst2.add("Six");
 
-		lst1.addAll(lst2); // 다른 리스트 추가
+		lst1.addAll(lst2);  // 다른 리스트 추가
 		lst1.set(0, "Zero");
 
 		System.out.println(lst1);
@@ -65,14 +65,14 @@ public class Spring03Application {
 		lst1.add("Four");
 		System.out.println(lst1);
 		// !중요한 메서드
-		// lst1.clear(); // 로직 중간에 함부로 쓰지 말것! 프로그램 종료시 리스트를 비우는 것!
-        
-		// Vector - ArrayList와 거의 동일.
+		//lst1.clear(); // 로직 중간에 함부로 쓰지 말것! 프로그램 종료시 리스트를 비우는 것!
+
+		// Vector - ArrayList와 거의 동일. 
 		Vector<String> vec1 = new Vector<>(10); // 용량을 지정할 수 있음.
 		vec1.add("One");
 		vec1.add("Three");
 		System.out.println("벡터 크기! -> " + vec1.size());
-		System.out.println("벡터 용량! -> " + vec1.capacity());
+		System.out.println("벡터 용량! -> " + vec1.capacity());		
 
 		// Set
 		Set<String> set1 = new HashSet<>();
@@ -98,7 +98,6 @@ public class Spring03Application {
 		phones.put("010-9999-5555", "Galaxy S10");
 		phones.put("010-0000-7733", "IPhone 14");
 		phones.put("010-9898-6890", "Galaxy S24");
-		phones.put("010-9898-6890", "Galaxy S24");
 		phones.put("010-6666-6622", "IPhone 11");
 
 		System.out.println(phones);
@@ -122,16 +121,14 @@ public class Spring03Application {
 		students.put("김기윤", std4);
 
 		Scanner scan = new Scanner(System.in);
-		System.out.print("# 성적 조회할 학생 이름 입력 >");
+		System.out.print("# 성적 조회할 학생 이름 입력 > ");
 		String inName = scan.next();
 
 		int sum = 0;
 		for (int score : students.get(inName)) { // "홍길동" -> [96, 100, 55, 80, 70]
-		    sum += score;
-
+			sum += score;
 		}
 
 		System.out.println(inName + "학생의 성적 총점은 " + sum + ", 평균은 " + (sum/5));
 	}
-
 }
