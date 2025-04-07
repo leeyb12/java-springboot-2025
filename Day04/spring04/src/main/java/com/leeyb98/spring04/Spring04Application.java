@@ -58,7 +58,7 @@ public class Spring04Application {
 		System.out.println(copyList);
 		// c로 시작하는 요소만 뽑아서, 대문자로 변경하고, 정렬해서, 갯수를 출력하시오.
 
-		// 기존방식으로 처리
+		// 기존방식으로 처리 - 12줄
 		// 1. 각 요소에서 c로 시작하는 것만 추출
 		List<String> lastList = new ArrayList<>();
 		for (String elmt : copyList) {
@@ -73,6 +73,9 @@ public class Spring04Application {
 		// 3. 정렬
 		Collections.sort(lastList);
 		System.out.println(lastList.size());
+
+		// 스트림API를 쓰면 - 1줄로 끝!
+		System.out.println(originList.stream().filter(s -> s.startsWith("c")).map(String::toUpperCase).sorted().toList().size());
 	}
     
 	// 일반 메서드 호출
@@ -89,5 +92,4 @@ public class Spring04Application {
 	public interface myCalc {
 		int plus(int x, int y);
 	}
-
 }
