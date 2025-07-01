@@ -527,18 +527,13 @@
    4. board_detail.html : 부트스트랩 적용 
 
 5. 전체 HTML에 디자인 적용
-   1. build.gradle에 thymeleaf-layout 의존성 추가
-      ```gradle
-      // Thymeleaf layout 의존성 추가. 250701. 신규추가. leeyb
-      implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
-      ```
-   2. 레이아웃 템플릿 페이지 작성
-   3. board_list.html에 적용
-   https://github.com/user-attachments/assets/3da7b47c-b020-4fa1-900f-9a11ff35e8a7
+    1. build.gradle에 thymeleaf-layout 의존성 추가
+        ```gradle
+        // Thymeleaf layout 의존성 추가. 250701. 신규추가. Hugo.
+	      implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+        ```
 
+    2. 레이아웃 템플릿 페이지 작성
+    3. board_list.html 에 적용    
 
-
-
-
-6. 
-      
+        https://github.com/user-attachments/assets/e34d7247-6812-448f-b198-fd0b3896a657
