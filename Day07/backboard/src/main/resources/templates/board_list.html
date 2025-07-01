@@ -1,0 +1,32 @@
+<html layout:decorate="~{layout}">
+  
+  <div layout:fragment="content" class="container my-3">
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th>순번</th>
+              <th>제목</th>
+              <th>작성일자</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="board, stat : ${boardList}">
+              <td class="text-center" th:text="${stat.count}"></td>
+
+              <td>
+                <a th:href="@{|/board/detail/${board.bno}|}"
+                   th:text="${board.title}"></a>
+              </td>
+
+              <td class="text-center"
+                  th:text="${#temporals.format(board.createDate, 'yyyy-MM-dd HH:mm')}">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</html>
