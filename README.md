@@ -534,7 +534,7 @@
       ```
    2. 레이아웃 템플릿 페이지 작성
    3. board_list.html에 적용
-   <img src="https://github.com/user-attachments/assets/3da7b47c-b020-4fa1-900f-9a11ff35e8a7">
+   https://github.com/user-attachments/assets/3da7b47c-b020-4fa1-900f-9a11ff35e8a7
 
 
 
