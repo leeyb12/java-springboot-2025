@@ -62,8 +62,8 @@ public class BoardController {
     @PostMapping("/create") // 저장버튼 클릭 후 
     public String setCreate(@Valid BoardForm boardForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) 
-            return "board_create";
-
+            return "board_create"; 
+            
         // TODO: 포스트 액션이후 처리
         this.boardService.setBoardOne(boardForm.getTitle(), boardForm.getContent());
         
