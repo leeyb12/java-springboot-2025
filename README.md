@@ -478,54 +478,56 @@
 ## 7일차(07-01)
 
 ### 스프링부트 Backboard 프로젝트(계속)
-1. 단위 테스트
-   - UPDATE 테스트
+1. 단위 테스트 
+  - UPDATE 테스트
 
-2. 계발 계속 
-   1. Entity 중 Board(게시글)의 댓글 Reply 클래스 생성
-   2. DB ERD에서 Board : Reply => 1:N(1대 다)를 관계를 가짐
-   3. @(Annotation) 추가
-      - @OneToMany(mappedBy = "board", cascade = CascadeType.REMOVE) : 1대다 ERD 관계로 부모클래스(테이블)에 작성하는 부분
-      - @ManyToOne : 다대1 ERD관계로 자식클래스에 작성하는 부분
-      - @Service : 서비스 모듈을 지칭
-      - @RequiredArgsConstructor : 생성자를 만들어줌. 파라미터가 존재하는 생성자를 자동으로 생성(Lombok)
-      - @NoArgsConstructor : 파라미터 없는 빈생성자를 자동으로 생성(Lombok)
-   4. ReplayRepository 인터페이스 작성
-   5. Service 작성
-      - 데이터 처리를 위해서 작성하는 클래스. MVC처럼 패턴처럼 모듈화로 복잡한 코드를 단순화, 역할분리를 위해서 
-      - Controller는 게이트(문) 사용자가 접속해서 요청하는 부분
+2. DB연동 개발 계속
+    1. Entity 중 Board(게시글)의 댓글 Reply 클래스 생성
+    2. DB ERD에서 Board : Reply => 1:N(1대 다)를 관계를 가짐
+    3. @(Annotation) 추가
+        - @OneToMany(mappedBy = "board", cascade = CascadeType.REMOVE) : 1대다 ERD 관계로 부모클래스(테이블)에 작성하는 부분
+        - @ManyToOne : 다대1 ERD관계로 자식클래스에 작성하는 부분
+        - @Service : 서비스 모듈을 지칭(SpringFramework)
+        - @RequiredArgsConstructor : final등의 멤버변수를 파라미터로 생성자를 만들어주는 것(Lombok)
+        - @AllArgsContructor : 클래스 멤버변수를 사용해서 생성자를 만들어주는 것(Lombok)
+        - @NoArgsContructor : 파라미터(클래스 멤버변수) 없는 빈생성자를 자동으로 생성(Lombok)
+    4. ReplyRepository 인터페이스 작성
+    5. Service 작성
+        - 데이터 처리를 위해서 작성하는 클래스. MVC처럼 패턴처럼 모듈화로 복잡한 코드를 단순화, 역할분리를 위해서
+        - Controller는 게이트(문) 사용자가 접속해서 요청하는 부분
+    6. 엔티티를 DTO 객체 변환
+        - Entity : DB와 연결되어 있는 클래스. 이 객체를 그대로 사용해서 FE로 보내는 방식이 좋지 않음
+        - Dto 사용은 옵션으로 할 수도 있음
 
-   6. 엔티티를 DTO 객체 변환
-      - Entity : DB와 연결되어 있는 클래스. 이 객체를 그대로 사용해서 FE로 보내는 방식이 좋지 않음
-      - DTO 사용은 옵션으로 할 수도 있음
+    7. BoardController 작성
+    8. /templates/board_list.html 생성 
+        - thymeleaf 문법 적용
 
-   7. BoardController 작성
-   8. /templates/board_list.html 생성
-      - thymeleaf 문법 적용
+          <img src="./image/sb0014.png" width="600">
 
-      <img src="./image/sb0014.png" width="600">
-   
-   9. 상세 페이지 작업
-      - Service, Controller 메서드 작업
-   
-   10. 상세 페이지에 댓글 저장 기능 추가
-       - board_detail.html에 댓글 저장 폼양식 추가
-       - ReplyService, ReplyController 각각 생성, 작성
+    9. 상세 페이지 작업
+        - Service, Controller 메서드 작업
 
+    10. 상세 페이지에 댓글 저장 기능 추가
+        - board_detail.html에 댓글 저장 폼양식 추가
+        - ReplyService, ReplyController 각각 생성, 작성
+    
 3. thymeleaf 문법
-   - ${} : 변수표현식. 변수에 들어있는 값을 화면에 표시하는 기능. Model에 들어있는 데이터를 화면에 표시 
-   - @{} : URL링크 표현식. 정적인 링크 또는 라우팅되는 경로를 생성하는 기능
-   - #{} : 메시지 표현식
-   - thymeleaf 속성에만 사용가능 : th:text, th:href ...
+    - ${} : 변수 표현식. 변수에 들어있는 값을 화면에 표시하는 기능. Model에 들어있는 데이터를 화면에 표시
+    - @{} : URL링크 표현식. 정적인 링크 또는 라우팅되는 경로를 생성하는 기능
+    - #{} : 메시지 표현식
+    - *{} : 선택변수 표현식. th:object 로 선택된 객체 내의 값에 접근
+    - ~{} : Fragment포함 표현식. 템플릿 Fragement를 사용
+    - thymeleaf 속성에만 사용가능 : th:text, th:href ... 
 
 4. 웹 페이지 디자인
-   1. resources/static : css, js, 정적 html 파일들이 위치
-   2. static/main.css : 전체에서 사용할 css 파일
-   3. Bootstrap 적용
-      - https://getbootstrap.com Current v.5.3.7 download 클릭
-      - https://github.com/twbs/icons.releases/tag/v1.13.1
-   4. board_detail.html : 부트스트랩 적용 
-
+    1. resources/static : css, js, 정적html 파일들이 위치
+    2. static/main.css : 전체에서 사용할 css 파일
+    3. Bootstrap 적용
+      - https://getbootstrap.com Current v5.3.7 download 클릭
+      - https://github.com/twbs/icons/releases/tag/v1.13.1 
+    4. board_detail.html : 부트스트랩 적용
+  
 5. 전체 HTML에 디자인 적용
     1. build.gradle에 thymeleaf-layout 의존성 추가
         ```gradle
@@ -537,3 +539,80 @@
     3. board_list.html 에 적용    
 
         https://github.com/user-attachments/assets/e34d7247-6812-448f-b198-fd0b3896a657
+
+
+## 8일차
+### 스프링부트 Backboard 프로젝트(계속)
+1. DB연동 개발
+    1. 게시글 등록 기능
+    2. Spring Boot Validation 기능 추가 : 입력 검증
+
+        ```gradle
+        // 추가 의존성
+	      implementation 'org.springframework.boot:spring-boot-starter-validation'
+        ```
+        - Annotation으로 검증 수행
+            - @Size, @NotNull, @NotEmpty, @Past(과거날짜만 가능), @Future(미래날짜만)
+            - @FutureOrPresent(미래또는 오늘날짜만), @Pattern(정규식패턴)
+
+    3. 입력검증 클래스, BoardForm.java 생성
+    4. BoardForm 객체를 컨트롤러에 전달
+    5. board_create.html에 입력검증 태그, 속성 등 추가
+        - GetMethod, PostMethod에 BoardForm 파라미터를 추가!
+
+    6. board_detail.html에 댓글 입력 검증
+
+      ```gradle
+      // 추가 의존성
+      implementation 'org.springframework.boot:spring-boot-starter-validation'
+      ```
+
+      - Annotation으로 검증 수행
+        - @Size, @NotNull, @NotEmpty, @Past(과거날짜만 가능), @Future(미래날짜만)
+        - @FutureOrPresent(미래 또는 오늘날짜만), @Pattern(정규식패턴)
+    
+    3. 입력검증 클래스, BoardForm.java 생성
+    4. BoardForm 객체를 컨트롤러에 전달
+    5. board_create.html에 입력검증 태그, 속성 등 추가
+       - GetMethod, PostMethod 메서드에 BoardForm 파라미터를 추가!
+    
+    6. board_detail.html에 댓글 입력 검증 태그 추가
+       - ReplyController의 PostMapping 메서드에 ReplyForm을 파라미터로 추가
+       - BoardController의 GetMapping 메서드에 ReplyForm을 @Valid 파라미터로 추가
+    
+    7. 검증영역 태그를 valid_error.html 템플릿 생성
+
+2. Bootstrap 템플릿 사이트
+   - https://startbootstrap.com/
+   - https://bootstrapmade.com/bootstrap-5-templates/
+   - https://mdbootstrap.com/freebies/
+   - https://bootstrapmade.com/
+   - https://www.youtube.com/@codehal (No Bootstrap)
+
+3. Bootstrap Navigation 구현
+   - templates/layout.html 네비게이션 태그 작성
+
+4. Paging : 대량 데이터 로드시 속도 개선
+   - Dummy data 생성 : Unit 테스트로 대략 200건 입력
+   - Page, Pageable 인터페이스
+
+     ```java
+     import org.springframework.data.domain.Page;
+     import org.springframework.data.domain.Pageable;
+     ```
+   - BoardRepository 인터페이스에 페이징용 findAll() 재정의
+   - BoardService 클래스에 페이징용 getBoardList() 오버로딩 작성
+   - BoardController 클래스에 getList()에 페이징 파라미터 추가
+   - board_list.html에 페이징 컨트롤 추가
+
+        <img src="./image/sb0015.png" width="600">
+
+   - 페이징번호가 모두 표시되는 문제 발생
+
+## 9일차
+
+### 스프링부트 Backboard 프로젝트(계속)
+
+1. Paging 구현 계속
+   1. 
+   
