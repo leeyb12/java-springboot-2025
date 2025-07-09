@@ -815,18 +815,22 @@
 
 
 
+https://github.com/user-attachments/assets/6c18f07c-a836-4d91-9f1c-8ff51d7b8fdb
+
+
+
 ## 11일차
 
 ### 스프링부트 Backboard 프로젝트(계속)
 
-1. VS Code 재설치시 삭제해야 할 폴더
-   - VS Code 제거 
-   - C:/Users/계정/.vscode : (플러그인 등 구성)
-   - C:/Users/계정/AppData/Roaming/Code : 전체설정, 백업, 캐시 등 가장 큰 폴더
-   - VS Code 재설치
+1. VS Code 재설치시 삭제해야할 폴더
+    - VS Code 제거
+    - C:/Users/계정/.vscode : 플러그인 등 구성
+    - C:/Users/계정/AppData/Roaming/Code : 전체설정, 백업, 캐시 등 가장 큰 폴더
+    - VS Code 재설치
 
 2. DB 테이블 연동 작업 (계속)
-    1. board_detail.html 수정일자 표시 
+    1. board_detail.html 수정일자 표시
     2. Board 게시글 삭제 추가
         1. board_detail.html 삭제 버튼 추가
         2. ~~BoardRepository에 삭제처리 로직 추가 필요없음~~
@@ -834,51 +838,129 @@
         4. BoardController에 삭제처리 GetMapping 추가
 
 3. 댓글에 대한 수정, 삭제
-   - 게시판과 동일하게 작성하면 됨
-
+    - 게시판과 동일하게 작성하면 됨
+    
 4. 좋아요 기능 추가
-    1. Board Entity에 `Set<Member> like` 속성 추가
-    2. board_detail.html 좋아요 버튼 추가 
+    1. Board Entity에 `Set<Member> like` 속성 추가    
+    2. board_detail.html 좋아요 버튼 추가
     3. BoardService like 관련 메서드 추가
-    4. BoardController에서 /board/like/{bno} GetMapping 추가
+    4. BoardController 에서 /board/like/{bno} GetMapping 추가
     5. Reply Entity에 `Set<Member> like` 속성 추가
     6. board_detail.html 댓글 부분에 좋아요 버튼 추가
-    7. ReplyService 답변가져오기 메서드 추가
+    7. ReplyService 답변가져오기 메서드 getReply() 추가
     8. ReplyService like 관련 메서드 추가
     9. ReplyController 에서 /reply/like/{rno} GetMapping 추가
 
 5. 커스텀 에러페이지 처리
-   1. application.properties 에서 Whitelabel Error 설정 해제
-   2. templates/error/500.html 생성
-   3. 템플릿 사이트
-      - https://freefrontend.com/html-404-templates/
-      - https://freefrontend.com/html-500-templates/
+    1. application.properties 에서 Whitelabel Error 설정 해제
+    2. templates/error/500.html 생성
+    5. 템플릿 사이트
+        - https://freefrontend.com/html-404-templates/
+        - https://freefrontend.com/html-500-templates/
 
 6. 웹 html 에디터 적용
     1. HTML 에디터 종류
-       - https://ckeditor.com/ckeditor-5/ : 전세계에서 가장 유명한 유무료 웹에디터
-       - https://alex-d.github.io/Trumbowyg/ : jQuery가 필요한 간단한 무료 웹에디터
-       - https://summernote.org/ : 정말 간단한 웹에디터
-       - https://simplemde.com/ : 마크다운만 사용하는 웹에디터
+        - https://ckeditor.com/ckeditor-5/ : 전세계에서 가장 유명한 유무료 웹에디터
+        - https://alex-d.github.io/Trumbowyg/ : jQuery가 필요한 간단한 무료 웹에디터
+        - https://summernote.org/ : 정말 간단한 웹에디터
+        - https://simplemde.com/ : 마크다운만 사용하는 웹에디터
     2. Trumbowyg 적용
-       1. jQuery CDN 적용
-       2. layout.html에 trumbowyg 관련 css, js 링크 추가
-       3. board_create.html에 content textarea와 관련된 스크립트 작성
-       4. 추가 플러그인 js 링크 추가
- 
-       <img src="./image/sb0017.png" width="600">
+        1. jQuery CDN 적용
+        2. layout.html에 trumbowyg 관련 css, js 링크 추가
+        3. board_create.html에 content textarea와 관련된 스크립트 작성
+        4. 추가 플러그인 js 링크 추가
+    
+        <img src="./image/sb0017.png" width="600">
 
 7. 게시판 검색 기능 추가
-   1. `@Query` : JPA 상에서 SQL쿼리와 유사한 방식으로 부가적인 기능을 만들고자할 때 사용. 표준 SQL이 아니라서 DBeaver, MySQL Workbench 등에서 사용불가
-   2. BoardRepository 에 JPA Query 어노테이션 사용 메서드 추가
-   3. BoardService 에 getBoardList() 변경
-   4. BoardController 에 getList() 키워드 파라미터 추가 
+    1. `@Query` : DATA JPA Query annnotation, JPA 상에서 SQL쿼리와 유사한 방식으로 부가적인 기능을 만들고자할 때 사용. 표준 SQL이 아니라서 DBeaver, MySQL Workbench등에서 사용불가
+    2. BoardRepository 에 JPA Query 어노테이션 사용 메서드 추가
+    3. BoardService 에 getBoardList() 변경
+    4. BoardController 에 getList() 키워드 파라미터 추가
+    5. board_list.html 검색부분 추가
 
 
-9. 나중에 추가해야 할 부분
+    
+## 12일차
 
-   1. [ ] 회원가입 후 바로 로그인하는 기능
-   2. [ ] 로그인한 사람 표시기능
-   3. [ ] 테마(라이트, 다크)
-   4. [ ] 파일 업로드
-   5. [ ] 부트스트랩 프리테마로 변경
+### 스프링부트 Backboard 프로젝트(계속)
+1. 현재 게시판 검색 중 발생 문제
+    - Board의 content 변수(테이블 컬럼), Column(length = 8000) 인 경우
+    - Oracle에서 컬럼 타입이 CLOB(Character Large OBject) 로 생성
+    - CLOB : 최대 2GB 텍스트 데이터 저장가능. 대용량 저장 가능
+    - 단, WHERE LIKE 문 사용불가
+    - Query annotation에서 `select distinct`를 사용하면 CLOB 컬럼 조회와 충돌발생
+    - 해결방법
+        1. Oracle Text : 검색용 인덱스를 추가 생성. JPA Native query로 CONTAINS() 함수 사용
+        2. ElasticSearch : 외부 서비스 사용해서 검색을 최적화. 도커에 엘라스틱서치 설치, 연동
+        3. 검색용 필드 추가 : VARCHAR(4000) 검색용 필드 content_search 컬럼 추가생성. content에서 html 태그 제거, 검색가능 단어만 저장하는 컬럼
+
+2. 게시판 검색 (계속)
+    1. BoardRepository findAllByKeyword의 `@Query` 를 편집. reply 제거, distinct 키워드 제거
+    2. 11일차 게시판 검색 기능 추가와 동일
+    3. board_list.html 검색부분, form 히든영역, javascript 추가
+
+3. 파일업로드
+    1. Board Entity에 파일업로드 관련 변수 -> 컬럼
+    2. BoardController 게시글 저장 메서드에 파일업로드 로직 추가
+    3. BoardService setBoardOne() 메서드 수정
+    4. application.properties 에 파일 업로드 위치 설정
+    5. board_create.html에 파일업로드 입력 + form 태그 enctype 속성 추가
+    6. board_detail.html에 파일다운로드 링크 추가
+    7. BoardController에 파일 다운로드 GetMapping 메서드 추가
+    8. 게시글 수정 시 업로드 관련 처리
+        - BoardForm 클래스에 파일업로드 관련 필드 추가(Board 엔티티와 동일)
+    9. BoardController 수정관련 GetMapping 메서드에 로직추가
+    10. BoardService putBoardOne() 메서드에 파일관련 파라미터 추가, 로직 수정
+    11. 파일업로드 사이즈 설정 - application.properties
+    12. 파일업로드시 파일명에 한글이 있으면 문제발생! - 한글을 UTF로 인코딩해서 저장
+
+## 13일차
+
+### 스프링부트 Backboard 프로젝트(계속)
+- 시맨틱웹
+    - 웹사이트의 화면 구성을 쉽게 알수 있도록 특수 태그형태의 기술
+    - 특수태그 : header, main, section, article, aside, footer
+
+1. 부트스트랩 프리테마 NiceSchool로 변경
+    1. 초기 작업
+        1. assets 폴더 복사해오기
+        2. favicon 커스터마이징
+        3. 구글폰트 구성
+        4. 3rd party vendor 라이브러리 css, head내 구성
+        5. 메뉴 부분 header 태그 복사
+        6. main 태그를 th:block과 동일하게 사용 class="main" 
+        7. footer 태그 아래는 복사, src 주소 변경
+        8. header > nav 메뉴, 주소 변경
+    2. Index 페이지 관련 이전
+        1. 타임리프 태그 아래에 이전
+
+            ```html
+            <html layout:decorate="~{layout}">
+                <div layout:fragment="content">
+                    <!-- 여기에 복사 -->
+            ```
+        2. 이미지, 동영상 경로 일치
+
+    3. 전체 메뉴 링크 관련된 페이지 작업
+        1. 404.html
+        2. IntroController 클래스 생성, /intro/about GetMapping메서드 작성
+        3. templates/intro/about.html 생성
+        4. 동일하게 페이지 옮기기
+
+        
+
+
+
+9. 나중에 추가해야할 부분
+    1. [x] 회원가입 후 바로 로그인되는 기능
+    2. [x] 로그인한 사람 표시기능
+    3. [ ] 테마(라이트, 다크) - 패스
+    4. [x] 파일 업로드
+    5. [ ] 부트스트랩 프리테마 NiceSchool로 변경
+    6. [ ] 파일사이즈 초과시 JS로 방지
+    7. [ ] 구글로그인
+    8. [ ] AWS 라이트세일 업로드
+    9. [ ] 게시글에 이미지 추가시 img 태그에 width="100%" 추가작업
+    10. [ ] 사용자 정보에 Role 추가
+ 
